@@ -29,5 +29,4 @@ figures/JOLALRTmanhattanIII
 figures/JUHOANSILRTmanhattanIII
 figures/Figure4LDB2
 beginlandscape__begi.html
-tab_example.html
 untitled1.html

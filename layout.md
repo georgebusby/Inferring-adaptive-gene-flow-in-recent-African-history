@@ -13,7 +13,6 @@ clearpage___In_the.html
 untitled.html
 sectionConclusion__G.html
 sectionAcknowledgeme.html
-sectionAuthor_contri.html
 sectionMaterials_and.html
 figures/MalariaGenMAPofPops
 figures/AdmixtureGLOBETROTTERresults

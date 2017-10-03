@@ -1,6 +1,5 @@
 abstract.html
 flushbottom_thispage.html
-sectionIntroduction_.html
 sectionResults_and_D.html
 figures/LocalAncestryOverviewFig1
 clearpage___To_help.html

@@ -8,7 +8,7 @@ grid:
   rows: 1
   columns: 1
   grid_elements:
-  - path: figures/FulaLocalAncestryDeviationsFig24panels/default_figure.png
+  - path: figures/FulaLocalAncestryDeviationsFig24panels/FulaLocalAncestryDeviationsFig24panels.png
     type: static
     from:
     - 1
@@ -16,5 +16,5 @@ grid:
     to:
     - 1
     - 1
-    url: "/users/164985/articles/203427/master/file/figures/FulaLocalAncestryDeviationsFig24panels/default_figure.png"
     folder_url: "/users/164985/articles/203427/master/folder/figures/FulaLocalAncestryDeviationsFig24panels"
+    url: "/users/164985/articles/203427/master/file/figures/FulaLocalAncestryDeviationsFig24panels/FulaLocalAncestryDeviationsFig24panels.png"

@@ -1,83 +1,83 @@
-<h1 class="ltx_title_section">Materials and Methods</h1>
+<h1 class="ltx_title_section">Materials and Methods</h1><div>
 
 
-<h2 class="ltx_title_subsection">Dataset</h2>
+</div><h2 class="ltx_title_subsection">Dataset</h2><div>
 
 
-<h3 class="ltx_title_subsubsection">African population genetics dataset</h3>
+</div><h3 class="ltx_title_subsubsection">African population genetics dataset</h3><div>
 
 
-<div>We used the dataset of 3,283 individuals from 48 African and 12 Eurasian populations typed at 328,000 SNPs previously published here <cite class='ltx_cite raw v1'>\cite{Busby2016AdmixtureAfrica}</cite>, and available at https://www.malariagen.net/resource/18. This dataset comprises 14 Eurasian and 46 African groups, mostly from sub-Saharan Africa [Fig. <span class='au-ref raw v1'>\ref{fig:supppopsmap}</span>]. Half (23) of the African groups represent subsets of samples collected as part to the MalariaGEN consortium. Details of partners involved in the consortium and recruitment of samples in relation to studying malaria genetics are published elsewhere<cite class='ltx_cite raw v1'>\cite{MalariaGenomicEpidemiologyNetwork2015ASelection}</cite>. The remaining groups are from publicly available datasets and the 1000 Genomes Project, with Eurasian groups from the latter included to help understand the genetic contribution from outside of the continent. To study patterns of diversity, we created an integrated dataset at a common set of high-quality SNPs and used SHAPEITv2<cite class='ltx_cite raw v1'>\cite{Delaneau2012AGenomes}</cite> to haplotypically phase these genotype data, generating a final set of 6566 haplotypes.</div>
-
-
-
-
-<h2 class="ltx_title_subsection">Defining Ancestry Regions</h2>
-
-
-<div>We used a combination of geographic, ethnic, and genetic information to group our sample into populations and eight ancestry regions [Fig. <span class='au-ref raw v1'>\ref{fig:fig1}</span>]. We analysed each population in turn, and inferred local ancestry using only those populations from outside of their ancestry region, which we term non-local paintings.</div>
-
-
-
-<h2 class="ltx_title_subsection">Chromosome painting procedure</h2>
-
-
-<h3 class="ltx_title_subsubsection">Inferring population specific prior copying probabilities and painting parameters</h3>
-
-
-<div>We utilised ChromoPainter <cite class='ltx_cite raw v1'>\cite{Lawson2012InferenceData}</cite> to infer local ancestry. In order to do so we first needed to generate population-specific prior copying probabilities. The algorithm initially assumes that each donor haplotype is equally likely to be copied from, which in reality is not the case. Moreover, when there is less contextual information available for painting, for example at the beginning and ends of chromosomes, in its default setting, the algorithm will assign ancestry based on the on the initial prior copying probabilities, which will lead to noisy ancestry inference. We therefore performed initial runs of ChromoPainter where for each recipient population we used the Expectation-Maximisation (EM) algorithm to infer the prior copying probabilities from each recipient group (using the <span class="ltx_Math math v1">\(-ip\)</span> flag). We ran ten EM iterations across 4 chromosomes (1,4,10,15) using 5 recipient individuals per population, and averaging across individuals and chromosomes to infer population specific prior copying probabilities.</div>
-
-
-<div>We next estimated the recombination scaling constant, using the <span class="ltx_Math math v1">\(-in\)</span> flag, and the mutation (HMM emission) probabilities, using the <span class="ltx_Math math v1">\(-im\)</span> flag, separately for the same 5 individuals and 4 chromosomes noted above for each recipient population, and again averaged across chromosomes and individuals. We then painted all individuals from a given recipient population using these population-specific prior copying probabilities and model parameters.</div>
-
-
-
-<h3 class="ltx_title_subsubsection">Inferring local ancestry with ChromoPainter</h3>
-
-
-<div>To estimate local ancestry uncertainty, we take multiple sample paths through the HMM to generate 10 ancestry paintings per recipient haplotype. We note that in an ideal scenario, we would use ChromoPainter to infer the true uncertainty in the ancestry at a SNP by computing the full set of posterior marginal copying probabilities for each recipient haplotype at every position of the genome, giving us the probability that a recipient haplotype copies from all donor haplotypes at a given position. However, given <span class="ltx_Math math v1">\(N\)</span> recipient haplotypes and <span class="ltx_Math math v1">\(M\)</span> donor individuals, this would give an <span class="ltx_Math math v1">\(N*M\)</span> matrix at each of <span class="ltx_Math math v1">\(L\)</span> loci for each recipient population, which quickly leads to computational storage issues. To overcome this, we instead store 10 painting samples, leading to <span class="ltx_Math math v1">\(N*10\)</span> matrix being stored at each locus and use these painting samples to estimate uncertainty in the local ancestry inference.</div>
+</div><div>We used the dataset of 3,283 individuals from 48 African and 12 Eurasian populations typed at 328,000 SNPs previously published here <cite class="ltx_cite raw v1">\cite{Busby2016AdmixtureAfrica}</cite>, and available at https://www.malariagen.net/resource/18. This dataset comprises 14 Eurasian and 46 African groups, mostly from sub-Saharan Africa [Fig. <span class="au-ref raw v1">\ref{fig:supppopsmap}</span>]. Half (23) of the African groups represent subsets of samples collected as part to the MalariaGEN consortium. Details of partners involved in the consortium and recruitment of samples in relation to studying malaria genetics are published elsewhere<cite class="ltx_cite raw v1">\cite{MalariaGenomicEpidemiologyNetwork2015ASelection}</cite>. The remaining groups are from publicly available datasets and the 1000 Genomes Project, with Eurasian groups from the latter included to help understand the genetic contribution from outside of the continent. To study patterns of diversity, we created an integrated dataset at a common set of high-quality SNPs and used SHAPEITv2<cite class="ltx_cite raw v1">\cite{Delaneau2012AGenomes}</cite> to haplotypically phase these genotype data, generating a final set of 6566 haplotypes.</div><div>
 
 
 
 
-<h2 class="ltx_title_subsection">Identifying local deviations in local ancestry</h2>
+</div><h2 class="ltx_title_subsection">Defining Ancestry Regions</h2><div>
 
 
-<h3 class="ltx_title_subsubsection">Binomial logistic model</h3>
+</div><div>We used a combination of geographic, ethnic, and genetic information to group our sample into populations and eight ancestry regions [Fig. <span class="au-ref raw v1">\ref{fig:fig1}</span>]. We analysed each population in turn, and inferred local ancestry using only those populations from outside of their ancestry region, which we term non-local paintings.</div><div>
 
 
-<div>The approach we take for identifying deviations in local ancestry is based on the idea that, in the absence of any other population genetic process, an individual’s ancestry proportions at a test SNP should be within the distribution of their genome-wide ancestry proportions. In theory, we can generate this null distribution of ancestry expectations based on the paintings at all genome-wide SNPs, or a subset thereof. In practice, we use a leave-one-out approach, and compute an individual’s genome-wide ancestry proportions from all SNPs that are not on the same chromosome as our test SNP that we want to test.</div>
+
+</div><h2 class="ltx_title_subsection">Chromosome painting procedure</h2><div>
 
 
-<div>We model the proportion from each donor ancestry region separately via a binomial model with a mean estimated genome-wide and a linear increase on the logistic scale determined by <span class="ltx_Math math v1">\(\beta\)</span>. We used a likelihood ratio test to determine if this parameter was significantly different from zero at its maximum.</div>
+</div><h3 class="ltx_title_subsubsection">Inferring population specific prior copying probabilities and painting parameters</h3><div>
 
 
-<span class="ltx_Math math v1">\begin{equation}
+</div><div>We utilised ChromoPainter <cite class="ltx_cite raw v1">\cite{Lawson2012InferenceData}</cite> to infer local ancestry. In order to do so we first needed to generate population-specific prior copying probabilities. The algorithm initially assumes that each donor haplotype is equally likely to be copied from, which in reality is not the case. Moreover, when there is less contextual information available for painting, for example at the beginning and ends of chromosomes, in its default setting, the algorithm will assign ancestry based on the on the initial prior copying probabilities, which will lead to noisy ancestry inference. We therefore performed initial runs of ChromoPainter where for each recipient population we used the Expectation-Maximisation (EM) algorithm to infer the prior copying probabilities from each recipient group (using the <span class="math ltx_Math v1">\(-ip\)</span> flag). We ran ten EM iterations across 4 chromosomes (1,4,10,15) using 5 recipient individuals per population, and averaging across individuals and chromosomes to infer population specific prior copying probabilities.</div><div>
+
+
+</div><div>We next estimated the recombination scaling constant, using the <span class="math ltx_Math v1">\(-in\)</span> flag, and the mutation (HMM emission) probabilities, using the <span class="math ltx_Math v1">\(-im\)</span> flag, separately for the same 5 individuals and 4 chromosomes noted above for each recipient population, and again averaged across chromosomes and individuals. We then painted all individuals from a given recipient population using these population-specific prior copying probabilities and model parameters.</div><div>
+
+
+
+</div><h3 class="ltx_title_subsubsection">Inferring local ancestry with ChromoPainter</h3><div>
+
+
+</div><div>To estimate local ancestry uncertainty, we take multiple sample paths through the HMM to generate 10 ancestry paintings per recipient haplotype. We note that in an ideal scenario, we would use ChromoPainter to infer the true uncertainty in the ancestry at a SNP by computing the full set of posterior marginal copying probabilities for each recipient haplotype at every position of the genome, giving us the probability that a recipient haplotype copies from all donor haplotypes at a given position. However, given <span class="math ltx_Math v1">\(N\)</span> recipient haplotypes and <span class="math ltx_Math v1">\(M\)</span> donor individuals, this would give an <span class="math ltx_Math v1">\(N*M\)</span> matrix at each of <span class="math ltx_Math v1">\(L\)</span> loci for each recipient population, which quickly leads to computational storage issues. To overcome this, we instead store 10 painting samples, leading to <span class="math ltx_Math v1">\(N*10\)</span> matrix being stored at each locus and use these painting samples to estimate uncertainty in the local ancestry inference.</div><div>
+
+
+
+
+</div><h2 class="ltx_title_subsection">Identifying local deviations in local ancestry</h2><div>
+
+
+</div><h3 class="ltx_title_subsubsection">Binomial logistic model</h3><div>
+
+
+</div><div>The approach we take for identifying deviations in local ancestry is based on the idea that, in the absence of any other population genetic process, an individual’s ancestry proportions at a test SNP should be within the distribution of their genome-wide ancestry proportions. In theory, we can generate this null distribution of ancestry expectations based on the paintings at all genome-wide SNPs, or a subset thereof. In practice, we use a leave-one-out approach, and compute an individual’s genome-wide ancestry proportions from all SNPs that are not on the same chromosome as our test SNP that we want to test.</div><div>
+
+
+</div><div>We model the proportion from each donor ancestry region separately via a binomial model with a mean estimated genome-wide and a linear increase on the logistic scale determined by <span class="math ltx_Math v1">\(\beta\)</span>. We used a likelihood ratio test to determine if this parameter was significantly different from zero at its maximum.</div><div>
+
+
+<span class="math ltx_Math v1">\begin{equation}
 {}_{0}:y_{i}\sim\textrm{Binom}(\theta,S)\ ,\ \log\left[\frac{\theta}{1-\theta}\right]=\mu_{i}\nonumber \\
  \end{equation}</span>
 
 
-<span class="ltx_Math math v1">\begin{equation}
+<span class="math ltx_Math v1">\begin{equation}
 {}_{1}:y_{i}\sim\textrm{Binom}(\theta,S)\ ,\ \log\left[\frac{\theta}{1-\theta}\right]=\mu_{i}+\beta\nonumber \\
  \end{equation}</span>
 
 
-<div>We calculate the MLE of beta by finding <span class="ltx_Math math v1">\(\hat{\beta}\)</span> that solves</div>
+</div><div>We calculate the MLE of beta by finding <span class="math ltx_Math v1">\(\hat{\beta}\)</span> that solves</div><div>
 
 
-<span class="ltx_Math math v1">\begin{equation}
+<span class="math ltx_Math v1">\begin{equation}
 frac{1}{S}\underset{i=1}{\overset{N}{\sum}}y_{i}=\underset{i=1}{\overset{N}{\sum}}\frac{e^{\mu_{i}+\hat{\beta}}}{1+e^{\mu_{i}+\hat{\beta}}}\nonumber \\
  \end{equation}</span>
 
 
-<div>Then we use that MLE to calculate our likelihood ratio test statistic <span class="ltx_Math math v1">\(\Lambda\)</span> and compare it to a <span class="ltx_Math math v1">\(\chi^{2}_{1}\)</span> distribution to get our pvalue.</div>
+</div><div>Then we use that MLE to calculate our likelihood ratio test statistic <span class="math ltx_Math v1">\(\Lambda\)</span> and compare it to a <span class="math ltx_Math v1">\(\chi^{2}_{1}\)</span> distribution to get our pvalue.</div><div>
 
 
-<span class="ltx_Math math v1">\begin{equation}
+<span class="math ltx_Math v1">\begin{equation}
 Lambda=2\ \left(\hat{\beta}\underset{i=1}{\overset{N}{\sum}}y_{i}+S\ \underset{i=1}{\overset{N}{\sum}}\log\left[\frac{1+e^{\mu_{i}}}{1+e^{\mu_{i}+\hat{\beta}}}\right]\right)\nonumber \\
  \end{equation}</span>
 
 
-<div>We then use chi-squared distribution to test if this statistic is in the tail.</div>
+</div><div>We then use chi-squared distribution to test if this statistic is in the tail.</div><div>
 
-\beginsupplement
+\beginsupplement</div>

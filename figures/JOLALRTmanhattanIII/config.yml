@@ -1,7 +1,7 @@
 ---
 version: 2
 multicolumn: false
-web-width: 500
+web-width: 800
 align: center
 float: h!
 grid:
@@ -16,3 +16,5 @@ grid:
     to:
     - 1
     - 1
+    url: "/users/164985/articles/203427/master/file/figures/JOLALRTmanhattanIII/JOLALRTmanhattanIII.png"
+    folder_url: "/users/164985/articles/203427/master/folder/figures/JOLALRTmanhattanIII"

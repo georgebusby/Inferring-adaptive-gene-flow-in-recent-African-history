@@ -11,7 +11,6 @@ clearpage___subsecti1.html
 figures/AncestrySelectionAcrossPops
 clearpage___In_the.html
 untitled.html
-sectionConsideration.html
 sectionConclusion__G.html
 sectionAcknowledgeme.html
 sectionAuthor_contri.html

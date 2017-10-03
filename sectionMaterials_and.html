@@ -49,7 +49,7 @@ Binomial logistic model</h3><div>
 The approach we take for identifying deviations in local ancestry is based on the idea that, in the absence of any other population genetic process, an individual’s ancestry proportions at a test SNP should be within the distribution of their genome-wide ancestry proportions. In theory, we can generate this null distribution of ancestry expectations based on the paintings at all genome-wide SNPs, or a subset thereof. In practice, we use a leave-one-out approach, and compute an individual’s genome-wide ancestry proportions from all SNPs that are not on the same chromosome as our test SNP that we want to test.</div><div>
 
 
-</div><div>We model the proportion from each donor ancestry region separately via a binomial model with a mean estimated genome-wide and a linear increase on the logistic scale determined by <span class="math ltx_Math v1">\(\beta\)</span>. We used a likelihood ratio test to determine if this parameter was significantly different from zero at its maximum.</div><div>
+We model the proportion from each donor ancestry region separately via a binomial model with a mean estimated genome-wide and a linear increase on the logistic scale determined by <span class="math ltx_Math v1">\(\beta\)</span>. We used a likelihood ratio test to determine if this parameter was significantly different from zero at its maximum.</div><div>
 
 
 <span class="math ltx_Math v1">\begin{equation}

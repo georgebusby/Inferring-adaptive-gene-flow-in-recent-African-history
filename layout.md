@@ -3,7 +3,6 @@ flushbottom_thispage.html
 figures/LocalAncestryOverviewFig1
 clearpage___To_help.html
 figures/FulaLocalAncestryDeviationsFig24panels
-figures/LocalAncestryOverviewFig11
 clearpage___Mutation.html
 figures/FULAILRTcovarianceDensities
 clearpage___subsecti.html

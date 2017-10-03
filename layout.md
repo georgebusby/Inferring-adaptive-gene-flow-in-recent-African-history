@@ -1,6 +1,5 @@
 abstract.html
 flushbottom_thispage.html
-sectionResults_and_D.html
 figures/LocalAncestryOverviewFig1
 clearpage___To_help.html
 figures/FulaLocalAncestryDeviationsFig24panels

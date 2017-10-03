@@ -16,6 +16,7 @@ sectionAcknowledgeme.html
 sectionMaterials_and.html
 ksso0on4518.tex
 beeo3b9db1g.html
+vq2l85a6cvg.tex
 g5ub41tpd1o.tex
 figures/MalariaGenMAPofPops
 figures/AdmixtureGLOBETROTTERresults

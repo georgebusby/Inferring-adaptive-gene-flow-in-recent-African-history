@@ -10,7 +10,6 @@ figures/WollofFigure3HLA
 clearpage___subsecti1.html
 figures/AncestrySelectionAcrossPops
 clearpage___In_the.html
-tab_example.html
 untitled.html
 sectionConsideration.html
 sectionConclusion__G.html

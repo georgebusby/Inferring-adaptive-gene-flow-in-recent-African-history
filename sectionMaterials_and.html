@@ -19,10 +19,10 @@ We used a combination of geographic, ethnic, and genetic information to group ou
 
 
 
-Chromosome painting procedure</h2><div>
+Chromosome painting procedure</h2><h3 data-label="313685" class="ltx_title_subsubsection">
 
 
-Inferring population specific prior copying probabilities and painting parameters</div><div>
+Inferring population specific prior copying probabilities and painting parameters</h3><div>
 
 
 </div><div>We utilised ChromoPainter <cite class="ltx_cite raw v1">\cite{Lawson2012InferenceData}</cite> to infer local ancestry. In order to do so we first needed to generate population-specific prior copying probabilities. The algorithm initially assumes that each donor haplotype is equally likely to be copied from, which in reality is not the case. Moreover, when there is less contextual information available for painting, for example at the beginning and ends of chromosomes, in its default setting, the algorithm will assign ancestry based on the on the initial prior copying probabilities, which will lead to noisy ancestry inference. We therefore performed initial runs of ChromoPainter where for each recipient population we used the Expectation-Maximisation (EM) algorithm to infer the prior copying probabilities from each recipient group (using the <span class="math ltx_Math v1">\(-ip\)</span> flag). We ran ten EM iterations across 4 chromosomes (1,4,10,15) using 5 recipient individuals per population, and averaging across individuals and chromosomes to infer population specific prior copying probabilities.</div><div>

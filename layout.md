@@ -8,6 +8,7 @@ figures/FULAILRTcovarianceDensities
 clearpage___subsecti.html
 figures/WollofFigure3HLA
 clearpage___subsecti1.html
+pc0slk2dtv.html
 q73glqsoes.html
 figures/AncestrySelectionAcrossPops
 clearpage___In_the.html

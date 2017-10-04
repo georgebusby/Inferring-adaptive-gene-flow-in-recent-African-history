@@ -9,7 +9,6 @@ clearpage___subsecti.html
 figures/WollofFigure3HLA
 clearpage___subsecti1.html
 q73glqsoes.html
-c8u2erjs7.html
 figures/AncestrySelectionAcrossPops
 clearpage___In_the.html
 untitled.html

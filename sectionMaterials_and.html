@@ -62,13 +62,13 @@ We model the proportion from each donor ancestry region separately via a binomia
  \end{equation}</span>
 
 
-</div><div>We calculate the MLE of beta by finding <span class="math ltx_Math v1">\(\hat{\beta}\)</span> that solves:</div><div>
+</div><div>We calculate the MLE of beta by finding <span class="math ltx_Math v1">\(\hat{\beta}\)</span> that solves:</div><blockquote class="au-no-left-border"><div>
 
 
 <span class="math ltx_Math v1">\(\[\frac{1}{S} \underset{i=1}{\overset{N}{\sum}} y_i = \underset{i=1}{\overset{N}{\sum}} \frac{e^{\mu_i + \hat{\beta}}}{1+e^{\mu_i + \hat{\beta}}}\]\)</span>
 
 
-</div><div>Then we use that MLE to calculate our likelihood ratio test statistic <span class="math ltx_Math v1">\(\Lambda\)</span> and compare it to a <span class="math ltx_Math v1">\(\chi^{2}_{1}\)</span> distribution to get our pvalue.</div><div>
+</div></blockquote><div>Then we use that MLE to calculate our likelihood ratio test statistic <span class="math ltx_Math v1">\(\Lambda\)</span> and compare it to a <span class="math ltx_Math v1">\(\chi^{2}_{1}\)</span> distribution to get our pvalue.</div><div>
 
 
 <span class="math ltx_Math v1">\(\[\Lambda = 2 \ \left( \hat{\beta} \underset{i=1}{\overset{N}{\sum}} y_i + S \ \underset{i=1}{\overset{N}{\sum}} \log\left[ \frac{1+e^{\mu_i}}{1+e^{\mu_i + \hat{\beta}}} \right] \right)\]\)</span>

@@ -19,7 +19,6 @@ mi5uimlv8g.tex
 vq2l85a6cvg.tex
 g5ub41tpd1o.tex
 figures/MalariaGenMAPofPops
-figures/002_total_population-ea-cart
 figures/AdmixtureGLOBETROTTERresults
 figures/FULAI_QQplots
 figures/FULAI_1KGP_lct_haps

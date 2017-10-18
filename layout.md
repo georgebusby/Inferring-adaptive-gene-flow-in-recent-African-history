@@ -4,6 +4,9 @@ figures/LocalAncestryOverviewFig1
 clearpage___To_help.html
 figures/FulaLocalAncestryDeviationsFig24panels
 clearpage___Mutation.html
+k1klt84nkk.html
+rq7e20k3qao.html
+qr498dt03g8.html
 figures/FULAILRTcovarianceDensities
 clearpage___subsecti.html
 figures/WollofFigure3HLA

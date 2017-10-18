@@ -9,6 +9,8 @@ clearpage___subsecti.html
 figures/WollofFigure3HLA
 clearpage___subsecti1.html
 pc0slk2dtv.html
+9p3fkndfsi8.html
+5e739h6rtk.html
 figures/AncestrySelectionAcrossPops
 clearpage___In_the.html
 sectionConclusion__G.html
